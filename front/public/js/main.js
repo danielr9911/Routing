@@ -29033,7 +29033,7 @@ var MapStore = Reflux.createStore({
         mapboxgl.accessToken = 'pk.eyJ1IjoiY3Jpc3R5YW5zdiIsImEiOiJjaW80ajZnajUwMWl5djZrcTh0MTM5Y3JzIn0.hyuT6lS1B3q2w-qdXvXXdg';
         this.map = new mapboxgl.Map({
             container: 'map', // container id
-            style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
+            style: 'mapbox://styles/cristyansv/cio4k1wzt005nainm44yw94ug', //stylesheet location
             center: [-75.5723, 6.20715], // starting position
             zoom: 13,
             hash: true

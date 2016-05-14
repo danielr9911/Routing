@@ -1,44 +1,29 @@
 import java.util.ArrayList;
+import java.util.Hashtable;
 
-public class Graph {
-    private ArrayList<ArrayList<Integer>> vertices;
-    private ArrayList<ArrayList<Integer>> weights;
-    private int size;
+public class Graph{
 
-    public Graph() {
-        vertices = new ArrayList<ArrayList<Integer>>();
-        weights = new ArrayList<ArrayList<Integer>>();
+    Hashtable <String, Node> nodes;
+
+    public Graph(){
+        nodes = new Hashtable<>();
     }
 
-    public void addNode(String identifier) {
-        //int id = Integer.parseInt(identifier);
-        ArrayList<Integer> arcs = new ArrayList<Integer>();
-        ArrayList<Integer> ws = new ArrayList<Integer>();
-        vertices.add(arcs);
-        weights.add(ws);
+    public void addNode(String id){
+        nodes.put(id, new Node(id));
     }
 
-    public int size() {
-        return vertices.size();
+    public void addArc (String source, String destination, int peso){
+        nodes.get(source).addSuccessor(destination, peso);
     }
 
-    public void addArc(String source, String destination, String weight) {
-        int s = Integer.parseInt(source);
-        int d = Integer.parseInt(destination);
-        int w = Integer.parseInt(weight);
-        vertices.get(s).add(d);
-        weights.get(s).add(w);
+    public ArrayList<Pair> getSuccessor(String id){
+        return nodes.get(id).getSuccessors();
     }
 
-    public int getWeight(int source, int destination) {
-        for (int j = 0; j < size; j++) {
-            if (vertices.get(source).get(j) == destination)
-                return weights.get(source).get(j);
-        }
-        return -1;
+    public int getSize(){
+        return nodes.size();
     }
 
-    public ArrayList<Integer> getSuccessors(int vertice) {
-        return vertices.get(vertice);
-    }
+
 }

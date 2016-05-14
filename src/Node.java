@@ -1,13 +1,25 @@
+import java.util.ArrayList;
+import java.util.Hashtable;
+
 /**
  * Created by Daniel on 14/05/2016.
  */
 public class Node {
-    private String id;
+
+    String id;
+
+
+    ArrayList<Pair> successors = new ArrayList<>();
+
     public Node(String id){
-        this.id=id;
+        this.id = id;
     }
 
-    public String getId(){
-        return id;
+    public void addSuccessor(String id, int peso){
+        successors.add(new Pair(id, peso));
+    }
+
+    public ArrayList<Pair> getSuccessors() {
+        return successors;
     }
 }

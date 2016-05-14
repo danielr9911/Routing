@@ -7,9 +7,13 @@ import java.io.IOException;
  */
 public class RoutingMain {
     public static void main(String[] args) throws IOException {
-        System.out.println("El Viernes a las 12m");
         Graph map = createGraph("./nodes.txt");
         map = createArcs("./arc.txt", map);
+
+
+        System.out.println(map.getSuccessor("416767874").get(0).getId());
+
+
     }
 
     private static Graph createGraph(String file) throws IOException {
@@ -33,7 +37,8 @@ public class RoutingMain {
             String source = words[0];
             String destination = words[1];
             String weight = words[2];
-            map.addArc(source, destination, weight);
+            int w = Integer.parseInt(weight);
+            map.addArc(source, destination, w);
         }
         b.close();
         return map;

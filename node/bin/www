@@ -90,67 +90,67 @@ function onListening() {
 }
 //
 var data = require('../n.js');
-
-var x = 0;
-
-
-var time = new Date();
-for (var key in data){
-  var node =data[key];
-  var geo = new db.Nodes({
-    id: key,
-    loc: [node.lon, node.lat],
-    adj: node.adj
-  });
-
-  geo.save(function (error, done) {
-    if(error){
-      console.log(error);
-    }else {
-      console.log(new Date()-time, x);
-      x++;
-    }
-  });
-
-
-
-  // if(i>1) break;
-}
-
-console.log(x++);
-
+//
+// var x = 0;
+//
+//
 // var time = new Date();
-// var fs = require('fs');
-// var nodeFile = fs.createWriteStream('./tmp/nodes.txt');
-
-//
-//
 // for (var key in data){
 //   var node =data[key];
+//   var geo = new db.Nodes({
+//     id: key,
+//     loc: [node.lon, node.lat],
+//     adj: node.adj
+//   });
 //
-//   for(var i=0; i<node.adj.length; i++){
-//     var destination = data[node.adj[i]];
+//   geo.save(function (error, done) {
+//     if(error){
+//       console.log(error);
+//     }else {
+//       console.log(new Date()-time, x);
+//       x++;
+//     }
+//   });
 //
 //
 //
-//
-//     var totalLon = Math.pow((node.lon - destination.lon), 2);
-//     var totalLat = Math.pow((node.lat - destination.lat), 2);
-//
-//     var total = parseInt(Math.sqrt(totalLon + totalLat)*100000);
-//
-//
-//     arcFile.write(key+" "+node.adj[i]+" "+total+'\n');
-//
-//
-//
-//   }
-//
-//   nodeFile.write(key+'\n');
+//   // if(i>1) break;
 // }
-// //
-// //
-// console.log(new Date()-time);
 //
-// nodeFile.end();
-// arcFile.end();
+// console.log(x++);
+
+var time = new Date();
+var fs = require('fs');
+var nodeFile = fs.createWriteStream('./tmp/nodesM.txt');
+var arcFile = fs.createWriteStream('./tmp/arcM.txt');
+
+
+
+for (var key in data){
+  var node =data[key];
+
+  // for(var i=0; i<node.adj.length; i++){
+  //   var destination = data[node.adj[i]];
+  //
+  //
+  //
+  //
+  //   var totalLon = Math.pow((node.lon - destination.lon), 2);
+  //   var totalLat = Math.pow((node.lat - destination.lat), 2);
+  //
+  //   var total = parseInt(Math.sqrt(totalLon + totalLat)*100000);
+  //
+  //
+  //   arcFile.write(key+" "+node.adj[i]+" "+total+'\n');
+  //
+  //
+  // }
+
+  nodeFile.write(key+" "+node.lat+" "+node.lon+'\n');
+}
+//
+//
+console.log(new Date()-time);
+
+nodeFile.end();
+arcFile.end();

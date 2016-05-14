@@ -19486,42 +19486,49 @@ var Map = React.createClass({
         });
 
         map.on('click', function (e) {
+
+            console.log(e);
             var match = http.post('/match', {
                 lon: e.lngLat.lng,
                 lat: e.lngLat.lat
             });
 
             match.then(function (data) {
-                map.addSource("id" + id, {
-                    "type": "geojson",
-                    "data": {
-                        "type": "FeatureCollection",
-                        "features": [{
-                            "type": "Feature",
-                            "geometry": {
-                                "type": "Point",
-                                "coordinates": [data.loc[0], data.loc[1]]
-                            },
-                            "properties": {
-                                "marker-symbol": "marker"
-                            }
-                        }]
-                    }
-                });
 
-                map.addLayer({
-                    "id": "id" + id,
-                    "type": "symbol",
-                    "source": "id" + id,
-                    "layout": {
-                        "icon-image": "{marker-symbol}-15",
-                        "text-field": "{title}",
-                        "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-                        "text-offset": [0, 0.6],
-                        "text-anchor": "top"
-                    }
-                });
-                id++;
+                console.log(data);
+
+                if (data.status) {
+                    map.addSource("id" + id, {
+                        "type": "geojson",
+                        "data": {
+                            "type": "FeatureCollection",
+                            "features": [{
+                                "type": "Feature",
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [data.data.loc[0], data.data.loc[1]]
+                                },
+                                "properties": {
+                                    "marker-symbol": "marker"
+                                }
+                            }]
+                        }
+                    });
+
+                    map.addLayer({
+                        "id": "id" + id,
+                        "type": "symbol",
+                        "source": "id" + id,
+                        "layout": {
+                            "icon-image": "{marker-symbol}-15",
+                            "text-field": "{title}",
+                            "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+                            "text-offset": [0, 0.6],
+                            "text-anchor": "top"
+                        }
+                    });
+                    id++;
+                }
             });
         });
     },

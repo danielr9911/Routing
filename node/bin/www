@@ -89,11 +89,11 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 //
-var data = require('../medellin.js');
+var data = require('../nodes.js');
 
 // var i = 0;
-
-
+//
+//
 // var time = new Date();
 // for (var key in data){
 //   var node =data[key];
@@ -113,9 +113,9 @@ var data = require('../medellin.js');
 //   i++;
 //   // if(i>1) break;
 // }
-
+//
 // console.log(i++);
-
+//
 var time = new Date();
 var fs = require('fs');
 var nodeFile = fs.createWriteStream('./tmp/nodes.txt');

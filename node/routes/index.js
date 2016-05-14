@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/match', function (req, res) {
   db.Nodes.findOne({
-    loc: { $near : [ req.body.lon, req.body.lat ], $maxDistance: 0.005 }
+    loc: { $near : [ req.body.lon, req.body.lat ], $maxDistance: 0.01 }
   }, function (error, data) {
     if(error){
       console.log(error)

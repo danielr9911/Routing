@@ -11,11 +11,11 @@ public class Graph {
     }
 
     public void addNode(String identifier) {
-        int id = Integer.parseInt(identifier);
+        //int id = Integer.parseInt(identifier);
         ArrayList<Integer> arcs = new ArrayList<Integer>();
         ArrayList<Integer> ws = new ArrayList<Integer>();
-        vertices.add(id, arcs);
-        weights.add(id, ws);
+        vertices.add(arcs);
+        weights.add(ws);
     }
 
     public int size() {

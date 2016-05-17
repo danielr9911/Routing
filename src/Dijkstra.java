@@ -18,12 +18,23 @@ EJEMPLO DE INPUT
 5 3 5
 1
 */
+
+
+
+
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.*;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 
 public class Dijkstra {
 	
 	//similar a los defines de C++
-	static final int MAX = 10005;  //maximo numero de vértices
+	static final int MAX = 15000;  //maximo numero de vï¿½rtices
 	static final int INF = 1<<30;  //definimos un valor grande que represente la distancia infinita inicial, basta conque sea superior al maximo valor del peso en alguna de las aristas
 
 	//En el caso de java usamos una clase que representara el pair de C++
@@ -42,17 +53,20 @@ public class Dijkstra {
 	
 	static Scanner sc = new Scanner( System.in );	   //para lectura de datos
 	static List< List< Node > > ady = new ArrayList< List< Node > >(); //lista de adyacencia
-	static int distancia[ ] = new int[ MAX ];          //distancia[ u ] distancia de vértice inicial a vértice con ID = u
-	static boolean visitado[ ] = new boolean[ MAX ];   //para vértices visitados
+	static int distancia[ ] = new int[ MAX ];          //distancia[ u ] distancia de vï¿½rtice inicial a vï¿½rtice con ID = u
+	static boolean visitado[ ] = new boolean[ MAX ];   //para vï¿½rtices visitados
 	static PriorityQueue< Node > Q = new PriorityQueue<Node>(); //priority queue propia de Java, usamos el comparador definido para que el de menor valor este en el tope
 	static int V;                                      //numero de vertices
 	static int previo[] = new int[ MAX ];              //para la impresion de caminos
 	
-	//función de inicialización
+	//funciï¿½n de inicializaciï¿½n
 	static void init(){
 	    for( int i = 0 ; i <= V ; ++i ){
+
+			System.out.println(i);
+
 	        distancia[ i ] = INF;  //inicializamos todas las distancias con valor infinito
-	        visitado[ i ] = false; //inicializamos todos los vértices como no visitados
+	        visitado[ i ] = false; //inicializamos todos los vï¿½rtices como no visitados
 	        previo[ i ] = -1;      //inicializamos el previo del vertice i con -1
 	    }
 	}
@@ -77,14 +91,14 @@ public class Dijkstra {
 	
 	static void dijkstra( int inicial ){
 	    init(); //inicializamos nuestros arreglos
-	    Q.add( new Node( inicial , 0 ) ); //Insertamos el vértice inicial en la Cola de Prioridad
+	    Q.add( new Node( inicial , 0 ) ); //Insertamos el vï¿½rtice inicial en la Cola de Prioridad
 	    distancia[ inicial ] = 0;      //Este paso es importante, inicializamos la distancia del inicial como 0
 	    int actual , adyacente , peso;
 	    while( !Q.isEmpty() ){                   //Mientras cola no este vacia
-	        actual = Q.element().first;            //Obtengo de la cola el nodo con menor peso, en un comienzo será el inicial
+	        actual = Q.element().first;            //Obtengo de la cola el nodo con menor peso, en un comienzo serï¿½ el inicial
 	        Q.remove();                           //Sacamos el elemento de la cola
-	        if( visitado[ actual ] ) continue; //Si el vértice actual ya fue visitado entonces sigo sacando elementos de la cola
-	        visitado[ actual ] = true;         //Marco como visitado el vértice actual
+	        if( visitado[ actual ] ) continue; //Si el vï¿½rtice actual ya fue visitado entonces sigo sacando elementos de la cola
+	        visitado[ actual ] = true;         //Marco como visitado el vï¿½rtice actual
 
 	        for( int i = 0 ; i < ady.get( actual ).size() ; ++i ){ //reviso sus adyacentes del vertice actual
 	            adyacente = ady.get( actual ).get( i ).first;   //id del vertice adyacente
@@ -110,19 +124,54 @@ public class Dijkstra {
 	}
 	
 	
-	public static void main(String[] args) {
-		int E , origen, destino , peso , inicial;
-		
-		V = sc.nextInt();
-		E = sc.nextInt();
-		for( int i = 0 ; i <= V ; ++i ) ady.add(new ArrayList<Node>()) ; //inicializamos lista de adyacencia
-		for( int i = 0 ; i < E ; ++i ){
-			origen = sc.nextInt(); destino = sc.nextInt(); peso = sc.nextInt();
-			ady.get( origen ).add( new Node( destino , peso ) );    //grafo diridigo
-			//ady.get( destino ).add( new Node( destino , peso ) ); //no dirigido
-		}
-		System.out.print("Ingrese el vertice inicial: ");
-	    inicial = sc.nextInt();
-	    dijkstra( inicial );
+	public static void main(String[] args)  throws IOException {
+			int E, origen, destino, peso, inicial;
+
+			V = 14499;
+			E = 32442;
+
+			Hashtable<String, Integer> numbers = new Hashtable<String, Integer>();
+
+			String cadena;
+			FileReader f = new FileReader("./nodes.txt");
+			BufferedReader b = new BufferedReader(f);
+
+			int i = 0;
+			while ((cadena = b.readLine()) != null) {
+				numbers.put(cadena, i);
+				ady.add(new ArrayList<Node>());
+				i++;
+			}
+
+			V = i++;
+
+			System.out.print(i);
+			b.close();
+
+
+			String arcos;
+			FileReader fi = new FileReader("./arc.txt");
+			BufferedReader bi = new BufferedReader(fi);
+			while ((arcos = bi.readLine()) != null) {
+				String[] words = arcos.split(" ");
+				int source = numbers.get(words[0]);
+				int destination = numbers.get(words[1]);
+				int weight = Integer.parseInt(words[2]);
+
+				ady.get(source).add(new Node(destination, weight));
+
+			}
+			b.close();
+
+
+//		for( int i = 0 ; i <= V ; ++i ) ady.add(new ArrayList<Node>()) ; //inicializamos lista de adyacencia
+//		for( int i = 0 ; i < E ; ++i ){
+//			origen = sc.nextInt(); destino = sc.nextInt(); peso = sc.nextInt();
+//			ady.get( origen ).add( new Node( destino , peso ) );    //grafo diridigo
+//			//ady.get( destino ).add( new Node( destino , peso ) ); //no dirigido
+//		}
+			System.out.print("Ingrese el vertice inicial: ");
+			inicial = sc.nextInt();
+			dijkstra(inicial);
 	}
 }

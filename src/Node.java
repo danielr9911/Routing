@@ -8,7 +8,6 @@ public class Node {
 
     String id;
 
-
     ArrayList<Pair> successors = new ArrayList<>();
 
     public Node(String id){

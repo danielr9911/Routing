@@ -58,7 +58,8 @@ public class Dijkstra {
 	static PriorityQueue< Node > Q = new PriorityQueue<Node>(); //priority queue propia de Java, usamos el comparador definido para que el de menor valor este en el tope
 	static int V;                                      //numero de vertices
 	static int previo[] = new int[ MAX ];              //para la impresion de caminos
-	
+	static ArrayList<Integer> camino = new ArrayList<>();
+
 	//funci�n de inicializaci�n
 	static void init(){
 	    for( int i = 0 ; i <= V ; ++i ){
@@ -86,10 +87,11 @@ public class Dijkstra {
 	    if( previo[ destino ] != -1 )    //si aun poseo un vertice previo
 	        print( previo[ destino ] );  //recursivamente sigo explorando
 	    System.out.printf("%d " , destino );        //terminada la recursion imprimo los vertices recorridos
+		camino.add(destino);
 	}
 
 	
-	static void dijkstra( int inicial ){
+	static void dijkstra( int inicial ,ArrayList<Integer> query ){
 	    init(); //inicializamos nuestros arreglos
 	    Q.add( new Node( inicial , 0 ) ); //Insertamos el v�rtice inicial en la Cola de Prioridad
 	    distancia[ inicial ] = 0;      //Este paso es importante, inicializamos la distancia del inicial como 0
@@ -116,11 +118,19 @@ public class Dijkstra {
 	    }
 
 	    System.out.println("\n**************Impresion de camino mas corto**************");
-	    System.out.printf("Ingrese vertice destino: ");
-	    int destino;
-	    destino = sc.nextInt();
-	    print( destino );
-	    System.out.printf("\n");
+		System.out.println("Nodo inicial: "+ inicial);
+		for(int i=0;i<query.size();i++){
+
+			int destino = query.get(i);
+			System.out.println("Vertice destino: "+ destino);
+			print( destino );
+			camino.add(distancia[destino]);
+			System.out.printf("\n");
+			System.out.println(camino);
+			camino.clear();
+
+		}
+
 	}
 	
 	
@@ -130,7 +140,8 @@ public class Dijkstra {
 			V = 14499;
 			E = 32442;
 
-			Hashtable<String, Integer> numbers = new Hashtable<String, Integer>();
+			Hashtable<String, Integer> toNumber = new Hashtable<String, Integer>();
+			Hashtable<Integer,String> toId = new Hashtable<>();
 
 			String cadena;
 			FileReader f = new FileReader("./nodes.txt");
@@ -138,7 +149,8 @@ public class Dijkstra {
 
 			int i = 0;
 			while ((cadena = b.readLine()) != null) {
-				numbers.put(cadena, i);
+				toNumber.put(cadena, i);
+				toId.put(i,cadena);
 				ady.add(new ArrayList<Node>());
 				i++;
 			}
@@ -154,15 +166,32 @@ public class Dijkstra {
 			BufferedReader bi = new BufferedReader(fi);
 			while ((arcos = bi.readLine()) != null) {
 				String[] words = arcos.split(" ");
-				int source = numbers.get(words[0]);
-				int destination = numbers.get(words[1]);
+				int source = toNumber.get(words[0]);
+				int destination = toNumber.get(words[1]);
 				int weight = Integer.parseInt(words[2]);
 
 				ady.get(source).add(new Node(destination, weight));
 
 			}
-			b.close();
+			bi.close();
 
+			String query;
+			FileReader fiq = new FileReader("./query.txt");
+			BufferedReader biq = new BufferedReader(fiq);
+			ArrayList<Integer> nodes = new ArrayList<>();
+			while ((query = biq.readLine()) != null) {
+				nodes.add(toNumber.get(query));
+			}
+			bi.close();
+
+
+
+			for (int j = 0;j<nodes.size();j++){
+				for (int k=0;k<nodes.size();k++){
+
+
+				}
+			}
 
 //		for( int i = 0 ; i <= V ; ++i ) ady.add(new ArrayList<Node>()) ; //inicializamos lista de adyacencia
 //		for( int i = 0 ; i < E ; ++i ){
@@ -170,8 +199,15 @@ public class Dijkstra {
 //			ady.get( origen ).add( new Node( destino , peso ) );    //grafo diridigo
 //			//ady.get( destino ).add( new Node( destino , peso ) ); //no dirigido
 //		}
-			System.out.print("Ingrese el vertice inicial: ");
-			inicial = sc.nextInt();
-			dijkstra(inicial);
+
+			inicial = nodes.get(0);
+			ArrayList<Integer> otherNodes = new ArrayList<>();
+			for(int z=0;z<nodes.size();z++){
+				if(nodes.get(z)!=inicial){
+					otherNodes.add(nodes.get(z));
+				}
+			}
+
+			dijkstra(inicial, otherNodes );
 	}
 }

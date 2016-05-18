@@ -1,8 +1,4 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Collections;
 
 
 public class caminoNode {
@@ -53,10 +49,10 @@ public class caminoNode {
 
         for (Integer node : caminoResultado.getCamino()){
             solucion.add(node);
-            System.out.println("nodo:" + node);
+//            System.out.println("nodo:" + node);
         }
 
-        System.out.println("peso:"+ caminoResultado.getPeso());
+//        System.out.println("peso:"+ caminoResultado.getPeso());
         solucion.add( caminoResultado.getPeso());
         return solucion;
     }

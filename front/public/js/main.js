@@ -20839,6 +20839,9 @@ var lista = {
 var Dir = React.createClass({
     displayName: 'Dir',
 
+    onClick: function () {
+        this.props.handler();
+    },
     render: function () {
 
         var dirs = this.props.dirs.map(function (dir) {
@@ -20861,6 +20864,11 @@ var Dir = React.createClass({
                 'div',
                 null,
                 dirs
+            ),
+            React.createElement(
+                'button',
+                { onClick: this.onClick },
+                'Ruta'
             )
         );
     }
@@ -20900,12 +20908,15 @@ var Map = React.createClass({
     onChange: function (event, dirs) {
         this.setState({ dirs: dirs });
     },
+    onClick: function () {
+        MapActions.search();
+    },
     render: function () {
         return React.createElement(
             'div',
             null,
             React.createElement('div', { style: style, id: 'map' }),
-            React.createElement(Dir, { dirs: this.state.dirs })
+            React.createElement(Dir, { handler: this.onClick, dirs: this.state.dirs })
         );
     }
 });
@@ -20922,7 +20933,7 @@ ReactDOM.render(React.createElement(Map, null), document.getElementById('app'));
 },{"./components/map.jsx":180,"react":158,"react-dom":2}],182:[function(require,module,exports){
 var Reflux = require('reflux');
 
-var MapActions = Reflux.createActions(['ready']);
+var MapActions = Reflux.createActions(['ready', 'search']);
 
 module.exports = MapActions;
 
@@ -20968,6 +20979,32 @@ var MapStore = Reflux.createStore({
                     }
                 }.bind(this));
             }
+        }.bind(this));
+    },
+    search: function () {
+        var find = http.post('/route', {
+            points: this.listDir.map(function (e) {
+                return e.id;
+            })
+        });
+
+        find.then(function (data) {
+
+            var points = data.map(function (cor) {
+                return {
+                    lat: cor.loc[1], lng: cor.loc[0]
+                };
+            });
+
+            var flightPath = new google.maps.Polyline({
+                path: points,
+                geodesic: true,
+                strokeColor: '#FF0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+
+            flightPath.setMap(this.map);
         }.bind(this));
     },
     ready: function () {

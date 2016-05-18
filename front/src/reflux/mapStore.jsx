@@ -45,6 +45,34 @@ var MapStore = Reflux.createStore({
                 }
             }.bind(this));
     },
+    search: function () {
+        var find = http.post('/route',{
+            points: this.listDir.map(function (e) {
+               return e.id;
+            })
+        });
+        
+        find.then(function (data) {
+
+            var points = data.map(function (cor) {
+                return {
+                    lat: cor.loc[1], lng: cor.loc[0]
+                }
+            });
+
+            var flightPath = new google.maps.Polyline({
+                path: points,
+                geodesic: true,
+                strokeColor: '#FF0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+
+            flightPath.setMap(this.map);
+
+        }.bind(this))
+        
+    },
     ready: function (){
         function loadMap() {
             if(typeof google !== 'undefined'){

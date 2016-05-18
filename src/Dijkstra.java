@@ -1,34 +1,7 @@
-/****************************************************
- ***Algoritmo: Dijkstra (One Source Shortest Path)
- ***Tipo: Grafos
- ***Autor: Jhosimar George Arias Figueroa
- ****************************************************/
-
-/*
-EJEMPLO DE INPUT
-5 9
-1 2 7
-1 4 2
-2 3 1
-2 4 2
-3 5 4
-4 2 3
-4 3 8
-4 5 5
-5 3 5
-1
-*/
-
-
-
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.*;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.*;
 
 
 public class Dijkstra {
@@ -86,7 +59,7 @@ public class Dijkstra {
 	static void print( int destino ){
 	    if( previo[ destino ] != -1 )    //si aun poseo un vertice previo
 	        print( previo[ destino ] );  //recursivamente sigo explorando
-	    System.out.printf("%d " , destino );        //terminada la recursion imprimo los vertices recorridos
+//	    System.out.printf("%d " , destino );        //terminada la recursion imprimo los vertices recorridos
 		camino.add(destino);
 	}
 
@@ -112,20 +85,20 @@ public class Dijkstra {
 	    }
 
 
-	    System.out.printf( "Distancias mas cortas iniciando en vertice %d\n" , inicial );
+//	    System.out.printf( "Distancias mas cortas iniciando en vertice %d\n" , inicial );
 	    for( int i = 1 ; i <= V ; ++i ){
 	    	//System.out.printf("Vertice %d , distancia mas corta = %d\n" , i , distancia[ i ] );
 	    }
 
-	    System.out.println("\n**************Impresion de camino mas corto**************");
-		System.out.println("Nodo inicial: "+ inicial);
+//	    System.out.println("\n**************Impresion de camino mas corto**************");
+//		System.out.println("Nodo inicial: "+ inicial);
 		for(int i=0;i<query.size();i++){
 
 			int destino = query.get(i);
-			System.out.println("Vertice destino: "+ destino);
+//			System.out.println("Vertice destino: "+ destino);
 			print( destino );
 			camino.add(distancia[destino]);
-			System.out.printf("\n");
+//			System.out.printf("\n");
 			caminos.add(new ArrayList<>(camino));
 			camino.clear();
 
@@ -156,7 +129,7 @@ public class Dijkstra {
 
 			V = i++;
 
-			System.out.print(i);
+//			System.out.print(i);
 			b.close();
 
 
@@ -207,7 +180,7 @@ public class Dijkstra {
 			dijkstra(inicial, otherNodes );
 		}
 
-		System.out.println(caminos);
+//		System.out.println(caminos);
 		int cantidadCaminos = caminos.size();
 
 		GraphAL grafo = new GraphAL(nodes.size());
@@ -220,19 +193,19 @@ public class Dijkstra {
 		}
 
 		ArrayList<Integer> solution = caminoNode.findPath(grafo,0);
-		System.out.println(solution);
+//		System.out.println(solution);
 		int[] mappedSolution = new int[solution.size()-1];
 		for(int j=0;j<solution.size()-1;j++){
 			mappedSolution[j]=mapGraph.get(solution.get(j));
 		}
 
-		System.out.println(Arrays.toString(mappedSolution));
+//		System.out.println(Arrays.toString(mappedSolution));
 
 		for(int j=0;j<mappedSolution.length-1;j++){
 			for(int k=0;k<caminos.size();k++){
 				if(caminos.get(k).get(0).equals(new Integer(mappedSolution[j]))&&caminos.get(k).get(caminos.get(k).size()-2).equals(new Integer(mappedSolution[j+1]))){
 					for(int l=0;l<caminos.get(k).size()-2;l++){
-						System.out.print(caminos.get(k).get(l)+", ");
+						System.out.print(toId.get(caminos.get(k).get(l))+",");
 					}
 				}
 			}

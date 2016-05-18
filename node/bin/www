@@ -119,38 +119,38 @@ var data = require('../n.js');
 //
 // console.log(x++);
 
-var time = new Date();
-var fs = require('fs');
-var nodeFile = fs.createWriteStream('./tmp/nodesM.txt');
-var arcFile = fs.createWriteStream('./tmp/arcM.txt');
-
-
-
-for (var key in data){
-  var node =data[key];
-
-  // for(var i=0; i<node.adj.length; i++){
-  //   var destination = data[node.adj[i]];
-  //
-  //
-  //
-  //
-  //   var totalLon = Math.pow((node.lon - destination.lon), 2);
-  //   var totalLat = Math.pow((node.lat - destination.lat), 2);
-  //
-  //   var total = parseInt(Math.sqrt(totalLon + totalLat)*100000);
-  //
-  //
-  //   arcFile.write(key+" "+node.adj[i]+" "+total+'\n');
-  //
-  //
-  // }
-
-  nodeFile.write(key+" "+node.lat+" "+node.lon+'\n');
-}
+// var time = new Date();
+// var fs = require('fs');;
+// var nodeFile = fs.createWriteStream('./tmp/nodesM.txt');
+// var arcFile = fs.createWriteStream('./tmp/arcM.txt');
 //
 //
-console.log(new Date()-time);
-
-nodeFile.end();
-arcFile.end();
+//
+// for (var key in data){
+//   var node =data[key];
+//
+//   // for(var i=0; i<node.adj.length; i++){
+//   //   var destination = data[node.adj[i]];
+//   //
+//   //
+//   //
+//   //
+//   //   var totalLon = Math.pow((node.lon - destination.lon), 2);
+//   //   var totalLat = Math.pow((node.lat - destination.lat), 2);
+//   //
+//   //   var total = parseInt(Math.sqrt(totalLon + totalLat)*100000);
+//   //
+//   //
+//   //   arcFile.write(key+" "+node.adj[i]+" "+total+'\n');
+//   //
+//   //
+//   // }
+//
+//   // nodeFile.write(key+" "+node.lat+" "+node.lon+'\n');
+// }
+// //
+// //
+// // console.log(new Date()-time);
+//
+// nodeFile.end();
+// arcFile.end();

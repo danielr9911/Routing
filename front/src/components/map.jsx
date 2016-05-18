@@ -27,11 +27,14 @@ var Map = React.createClass({
     onChange: function (event, dirs) {
         this.setState({dirs: dirs});
     },
+    onClick: function () {
+        MapActions.search();
+    },
     render: function () {
         return (
             <div>
                 <div style={style} id="map"></div>
-                <Dir dirs={this.state.dirs}/>
+                <Dir handler={this.onClick} dirs={this.state.dirs}/>
             </div>
         )
     }

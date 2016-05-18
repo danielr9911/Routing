@@ -11,7 +11,6 @@ public class ParejaAI {
         this.camino = camino;
         this.peso = peso;
 
-
     }
 
     public ArrayList<Integer> getCamino(){

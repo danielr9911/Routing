@@ -29,6 +29,9 @@ var lista = {
 };
 
 var Dir = React.createClass({
+    onClick: function () {
+        this.props.handler();
+    },
     render: function () {
 
         var dirs = this.props.dirs.map(function (dir) {
@@ -45,6 +48,7 @@ var Dir = React.createClass({
                 <div >
                     {dirs}
                 </div>
+                <button onClick={this.onClick}>Ruta</button>
             </div>
         )
     }

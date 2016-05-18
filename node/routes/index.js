@@ -62,6 +62,8 @@ router.post('/route', function (req, res) {
 
         prc.stdout.setEncoding('utf8');
         prc.stdout.on('data', function (data) {
+
+            console.log('data');
             solution += data;
         });
 

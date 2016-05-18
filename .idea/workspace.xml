@@ -2,41 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db8527a1-82ba-476b-b7ca-3d8a4827f35d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__com_google_code_gson_gson_2_6_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__com_sparkjava_spark_core_2_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_9_3_6_v20151106.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_3_6_v20151106.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__org_eclipse_jetty_jetty_security_9_3_6_v20151106.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__org_eclipse_jetty_jetty_server_9_3_6_v20151106.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlet_9_3_6_v20151106.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_3_6_v20151106.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__org_eclipse_jetty_jetty_webapp_9_3_6_v20151106.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__org_eclipse_jetty_jetty_xml_9_3_6_v20151106.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_api_9_3_6_v20151106.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_client_9_3_6_v20151106.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_common_9_3_6_v20151106.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_server_9_3_6_v20151106.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_servlet_9_3_6_v20151106.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_13.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/src/main/java/Dijkstra.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/src/main/java/Graph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/src/main/java/GraphAL.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/src/main/java/JsonTransformer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/src/main/java/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/src/main/java/Node.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/src/main/java/ParejaAI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/src/main/java/ParejaII.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/src/main/java/Persona.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spark/src/main/java/caminoNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Routing/RoutingMain.class" afterPath="$PROJECT_DIR$/out/production/Routing/RoutingMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dijkstra.java" afterPath="$PROJECT_DIR$/src/Dijkstra.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graph.java" afterPath="$PROJECT_DIR$/src/Graph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ParejaAI.java" afterPath="$PROJECT_DIR$/src/ParejaAI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/caminoNode.java" afterPath="$PROJECT_DIR$/src/caminoNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/.idea/workspace.xml" afterPath="$PROJECT_DIR$/front/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node/.idea/workspace.xml" afterPath="$PROJECT_DIR$/node/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node/Routing/query.txt" afterPath="$PROJECT_DIR$/node/Routing/query.txt" />
     </list>
     <ignored path="Routing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,7 +26,63 @@
     <favorites_list name="Routing" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Dijkstra.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dijkstra.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="183" column="45" selection-start-line="183" selection-start-column="45" selection-end-line="183" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Graph.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Graph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphAL.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GraphAL.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoutingMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RoutingMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1463537127000" expanded="true" signature="1393:1398" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="caminoNode.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/caminoNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.053475935">
+              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -90,6 +114,7 @@
         <option value="$PROJECT_DIR$/src/ParejaAI.java" />
         <option value="$PROJECT_DIR$/src/caminoNode.java" />
         <option value="$PROJECT_DIR$/src/Dijkstra.java" />
+        <option value="$PROJECT_DIR$/src/GraphAL.java" />
       </list>
     </option>
   </component>
@@ -136,6 +161,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -194,7 +220,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -693,15 +718,16 @@
       <workItem from="1463583888243" duration="114000" />
       <workItem from="1463589366017" duration="593000" />
       <workItem from="1463589976977" duration="1000" />
+      <workItem from="1463597521955" duration="150000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12182000" />
+    <option name="totallyTimeSpent" value="12332000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-75" width="2560" height="1053" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -711,7 +737,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21564734" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21564734" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1010,14 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GraphAL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2926045">
-          <caret line="32" column="24" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Pair.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24115756">
@@ -1036,13 +1054,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3697749">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1065,13 +1076,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.86754966">
           <caret line="225" column="51" selection-start-line="225" selection-start-column="51" selection-end-line="225" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Routing/caminoNode.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34768212">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dijkstra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="183" column="45" selection-start-line="183" selection-start-column="45" selection-end-line="183" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GraphAL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RoutingMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54662377">
+        <state vertical-scroll-proportion="0.0">
           <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1080,28 +1123,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dijkstra.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37086093">
-          <caret line="183" column="45" selection-start-line="183" selection-start-column="45" selection-end-line="183" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/caminoNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7847682">
-          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/Routing/caminoNode.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34768212">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.053475935">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
           <folding />
         </state>
       </provider>

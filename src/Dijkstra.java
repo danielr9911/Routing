@@ -59,12 +59,12 @@ public class Dijkstra {
 	static int V;                                      //numero de vertices
 	static int previo[] = new int[ MAX ];              //para la impresion de caminos
 	static ArrayList<Integer> camino = new ArrayList<>();
-
+	static ArrayList<ArrayList<Integer>> caminos = new ArrayList<>();
 	//funci�n de inicializaci�n
 	static void init(){
 	    for( int i = 0 ; i <= V ; ++i ){
 
-			System.out.println(i);
+			//System.out.println(i);
 
 	        distancia[ i ] = INF;  //inicializamos todas las distancias con valor infinito
 	        visitado[ i ] = false; //inicializamos todos los v�rtices como no visitados
@@ -90,7 +90,7 @@ public class Dijkstra {
 		camino.add(destino);
 	}
 
-	
+
 	static void dijkstra( int inicial ,ArrayList<Integer> query ){
 	    init(); //inicializamos nuestros arreglos
 	    Q.add( new Node( inicial , 0 ) ); //Insertamos el v�rtice inicial en la Cola de Prioridad
@@ -114,7 +114,7 @@ public class Dijkstra {
 
 	    System.out.printf( "Distancias mas cortas iniciando en vertice %d\n" , inicial );
 	    for( int i = 1 ; i <= V ; ++i ){
-	    	System.out.printf("Vertice %d , distancia mas corta = %d\n" , i , distancia[ i ] );
+	    	//System.out.printf("Vertice %d , distancia mas corta = %d\n" , i , distancia[ i ] );
 	    }
 
 	    System.out.println("\n**************Impresion de camino mas corto**************");
@@ -126,16 +126,15 @@ public class Dijkstra {
 			print( destino );
 			camino.add(distancia[destino]);
 			System.out.printf("\n");
-			System.out.println(camino);
+			caminos.add(new ArrayList<>(camino));
 			camino.clear();
 
 		}
-
 	}
 	
 	
 	public static void main(String[] args)  throws IOException {
-			int E, origen, destino, peso, inicial;
+			int E, destino, peso, inicial;
 
 			V = 14499;
 			E = 32442;
@@ -182,16 +181,9 @@ public class Dijkstra {
 			while ((query = biq.readLine()) != null) {
 				nodes.add(toNumber.get(query));
 			}
-			bi.close();
+			fiq.close();
 
 
-
-			for (int j = 0;j<nodes.size();j++){
-				for (int k=0;k<nodes.size();k++){
-
-
-				}
-			}
 
 //		for( int i = 0 ; i <= V ; ++i ) ady.add(new ArrayList<Node>()) ; //inicializamos lista de adyacencia
 //		for( int i = 0 ; i < E ; ++i ){
@@ -199,8 +191,12 @@ public class Dijkstra {
 //			ady.get( origen ).add( new Node( destino , peso ) );    //grafo diridigo
 //			//ady.get( destino ).add( new Node( destino , peso ) ); //no dirigido
 //		}
-
-			inicial = nodes.get(0);
+		Hashtable<Integer,Integer> mapGraph = new Hashtable<>();
+		Hashtable<Integer,Integer> mapGraph2 = new Hashtable<>();
+		for(int n=0;n<nodes.size();n++){
+			inicial = nodes.get(n);
+			mapGraph.put(n,inicial);
+			mapGraph2.put(inicial,n);
 			ArrayList<Integer> otherNodes = new ArrayList<>();
 			for(int z=0;z<nodes.size();z++){
 				if(nodes.get(z)!=inicial){
@@ -209,5 +205,38 @@ public class Dijkstra {
 			}
 
 			dijkstra(inicial, otherNodes );
+		}
+
+		System.out.println(caminos);
+		int cantidadCaminos = caminos.size();
+
+		GraphAL grafo = new GraphAL(nodes.size());
+		for(int z=0;z<cantidadCaminos;z++){
+			int longitudCamino = caminos.get(z).size();
+			int origen = mapGraph2.get(caminos.get(z).get(0));
+			int destination = mapGraph2.get(caminos.get(z).get(longitudCamino-2));
+			int weight = caminos.get(z).get(longitudCamino-1);
+			grafo.addArc(origen,destination,weight);
+		}
+
+		ArrayList<Integer> solution = caminoNode.findPath(grafo,0);
+		System.out.println(solution);
+		int[] mappedSolution = new int[solution.size()-1];
+		for(int j=0;j<solution.size()-1;j++){
+			mappedSolution[j]=mapGraph.get(solution.get(j));
+		}
+
+		System.out.println(Arrays.toString(mappedSolution));
+
+		for(int j=0;j<mappedSolution.length-1;j++){
+			for(int k=0;k<caminos.size();k++){
+				if(caminos.get(k).get(0).equals(new Integer(mappedSolution[j]))&&caminos.get(k).get(caminos.get(k).size()-2).equals(new Integer(mappedSolution[j+1]))){
+					for(int l=0;l<caminos.get(k).size()-2;l++){
+						System.out.print(caminos.get(k).get(l)+", ");
+					}
+				}
+			}
+		}
+
 	}
 }

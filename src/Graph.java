@@ -1,28 +1,19 @@
 import java.util.ArrayList;
-import java.util.Hashtable;
-
-public class Graph {
-
-    Hashtable<String, Node> nodes;
-
-    public Graph() {
-        nodes = new Hashtable<>();
-    }
-
-    public void addNode(String id) {
-        nodes.put(id, new Node(id));
-    }
-
-    public void addArc(String source, String destination, int peso) {
-        nodes.get(source).addSuccessor(destination, peso);
-    }
-
-    public ArrayList<Pair> getSuccessor(String id) {
-        return nodes.get(id).getSuccessors();
-    }
-
-    public int getSize() {
-        return nodes.size();
-    }
-    
+/**
+ * Abstract class for implementations of Digraphs
+ * 
+ * @author Mauricio Toro
+ * @version 1
+ */
+public abstract class Graph
+{
+   protected int size;
+   public  Graph(int vertices) 
+   {
+       size = vertices;
+   }
+   public  abstract void addArc(int source, int destination, int weight);
+   public abstract ArrayList<Integer> getSuccessors(int vertice);
+   public abstract int getWeight(int source, int destination);
+   public  int size() {return size;}
 }

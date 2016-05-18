@@ -72,6 +72,7 @@ router.post('/route', function (req, res) {
             cor.splice(cor.length - 1, 1);
             cor.push(cor[0]);
 
+            //aaaaaaaa
             var find = [];
 
             cor.forEach(function (ele) {

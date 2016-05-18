@@ -70,6 +70,7 @@ router.post('/route', function (req, res) {
 
             var cor = solution.split(",");
             cor.splice(cor.length - 1, 1);
+            cor.push(cor[0]);
 
             var find = [];
 

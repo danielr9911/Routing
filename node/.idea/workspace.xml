@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a98ab98c-5a6d-4103-9990-35481c49788f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../out/production/Routing/RoutingMain.class" afterPath="$PROJECT_DIR$/../out/production/Routing/RoutingMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../front/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../front/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../front/public/js/main.js" afterPath="$PROJECT_DIR$/../front/public/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../front/src/components/Dir.jsx" afterPath="$PROJECT_DIR$/../front/src/components/Dir.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../front/src/components/map.jsx" afterPath="$PROJECT_DIR$/../front/src/components/map.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../front/src/reflux/mapActions.jsx" afterPath="$PROJECT_DIR$/../front/src/reflux/mapActions.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../front/src/reflux/mapStore.jsx" afterPath="$PROJECT_DIR$/../front/src/reflux/mapStore.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/www" afterPath="$PROJECT_DIR$/bin/www" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Routing/query.txt" afterPath="$PROJECT_DIR$/Routing/query.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/Dijkstra.java" afterPath="$PROJECT_DIR$/../src/Dijkstra.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/Graph.java" afterPath="$PROJECT_DIR$/../src/Graph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/ParejaAI.java" afterPath="$PROJECT_DIR$/../src/ParejaAI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../src/caminoNode.java" afterPath="$PROJECT_DIR$/../src/caminoNode.java" />
     </list>
     <ignored path="node.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,8 +37,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+            <state relative-caret-position="575">
+              <caret line="72" column="29" selection-start-line="72" selection-start-column="29" selection-end-line="72" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -326,12 +313,12 @@
       <workItem from="1463409686594" duration="980000" />
       <workItem from="1463511460500" duration="213000" />
       <workItem from="1463589990659" duration="2400000" />
-      <workItem from="1463593690102" duration="688000" />
+      <workItem from="1463593690102" duration="981000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21613000" />
+    <option name="totallyTimeSpent" value="21906000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-75" width="2560" height="1053" extended-state="6" />
@@ -657,8 +644,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+        <state relative-caret-position="575">
+          <caret line="72" column="29" selection-start-line="72" selection-start-column="29" selection-end-line="72" selection-end-column="29" />
           <folding />
         </state>
       </provider>

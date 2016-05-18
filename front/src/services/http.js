@@ -10,7 +10,7 @@ var service = {
             });
     },
     post: function (url, body) {
-        return fetch(baseUrl+url, {
+        return fetch(url, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
